@@ -5,12 +5,12 @@ const routes: Routes = [
   {
     path : 'customer',
     loadChildren: () =>
-      import('./features/customer/customer/customer.module').then(m => m.CustomerModule) ///lazy loading
+      import('./features/customer/customer.module').then(m => m.CustomerModule) ///lazy loading
   },
   {
     path : 'admin',
     loadChildren: () => 
-      import('./features/admin/admin/admin.module').then(m => m.AdminModule) ///lazy loading
+      import('./features/admin/admin.module').then(m => m.AdminModule) ///lazy loading
   },
   {path: '', redirectTo: 'customer', pathMatch: 'full'}, //default route
   {path: '**', redirectTo: 'customer'} //wildcard route

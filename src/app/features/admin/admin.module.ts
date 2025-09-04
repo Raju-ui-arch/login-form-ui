@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { AdminRoutingModule } from './admin-routing.module';
 import { Routes } from '@angular/router';
-import { AdminLoginComponent } from '../components/admin-login/admin-login.component';
-import { TwoFactorComponent } from '../components/two-factor/two-factor.component';
+import { AdminLoginComponent } from './components/admin-login/admin-login.component';
+import { TwoFactorComponent } from './components/two-factor/two-factor.component';
 
 const routes : Routes = [
   {

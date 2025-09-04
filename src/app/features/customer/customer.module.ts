@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { CustomerRoutingModule } from './customer-routing.module';
 import { Routes } from '@angular/router';
-import { CustomerLoginComponent } from '../components/customer-login/customer-login.component';
+import { CustomerLoginComponent } from './components/customer-login/customer-login.component';
 
 const  routes : Routes = [
   {
