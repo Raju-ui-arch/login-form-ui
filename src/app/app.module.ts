@@ -11,6 +11,7 @@ import { SocialButtonComponent } from './shared/components/social-button/social-
 import { CustomerLoginComponent } from './features/customer/components/customer-login/customer-login.component';
 import { AdminLoginComponent } from './features/admin/components/admin-login/admin-login.component';
 import { TwoFactorComponent } from './features/admin/components/two-factor/two-factor.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { TwoFactorComponent } from './features/admin/components/two-factor/two-f
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

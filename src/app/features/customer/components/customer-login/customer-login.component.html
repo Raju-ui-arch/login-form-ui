@@ -1,2 +1,76 @@
-<p>customer-login works!</p>
+    <!-- Main container for the login page -->
+     <div class="main-container">
+<div class="login-container">
+  <!-- Heading of the login form -->
+  <h1 class="portal-header">{{ isCustomerPortal ? 'Customer Login' : 'Admin Login' }}</h1>
+<div class="portal-switch" style="display: flex; gap: 1rem; margin-bottom: 2rem; justify-content: center;">
+  <button
+    *ngIf="isCustomerPortal"
+    type="button"
+    class="portal-btn"
+    (click)="onAdminLogin()"
+  >
+    Switch to Admin Portal
+  </button>
+  <button
+    *ngIf="!isCustomerPortal"
+    type="button"
+    class="portal-btn"
+    (click)="onCustomerLogin()"
+  >
+    Switch to Customer Portal
+  </button>
+</div>
+  <!-- Login form starts here -->
 
+  <!-- Angular reactive form binding (ngSubmit triggers onSubmit method in TS file) -->
+  <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+    
+    <!-- Username field -->
+    <div class="form-group">
+      <label for="username">Username</label>
+      <!-- formControlName="username" links this input to the FormGroup defined in TS -->
+      <input id="username" type="text" formControlName="username" placeholder="Enter username" />
+    </div>
+
+    <!-- Password field -->
+    <div class="form-group">
+      <label for="password">Password</label>
+      <!-- formControlName="password" links this input to the FormGroup defined in TS -->
+      <input id="password" type="password" formControlName="password" placeholder="Enter password" />
+    </div>
+
+    <!-- Submit button is disabled until the form is valid -->
+    <button class="login-button" type="submit" [disabled]="loginForm.invalid">Sign in</button>
+
+    <h2 class="alternative-login">or continue with</h2>
+    <!-- Social login buttons -->
+    <div class="social-login-buttons">
+      <button type="button" (click)="onGoogleLogin()">Google</button>
+      <button type="button" (click)="onTwitterLogin()">Twitter</button>
+    </div>
+    <!-- Display error message if login fails -->
+    <div *ngIf="loginForm.invalid && (loginForm.dirty || loginForm.touched)" class="error-message">
+      <p>Please fill in all required fields.</p>
+
+      <!-- Check box for "Remember Me" -->
+      <div class="form-group">
+        <label>
+          <input type="checkbox" formControlName="rememberMe" />
+          Remember Me
+        </label>
+    
+        <!--Forgot Password Button -->
+        <button class="forgot-password" type="button" (click)="onForgotPassword()">Forgot Password?</button>
+
+        <!-- Sign up link -->
+                        <div class="text-center mt-8">
+                    <span class="text-white text-opacity-60 text-xs">Don't have an account? </span>
+                    <a href="#" onclick="showSignup()" class="text-white text-opacity-90 hover:text-opacity-100 font-medium text-xs">Sign up</a>
+                </div>
+
+      </div>
+    </div>
+  </form>
+</div>
+</div>

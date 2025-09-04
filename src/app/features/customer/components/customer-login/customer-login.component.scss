@@ -1,0 +1,123 @@
+/* Main container that centers the form */
+
+.login-container {
+  max-width: 400px; /* Limit width for better UI */
+  margin: 100px auto; /* Center horizontally with margin top */
+  padding: 2rem; /* Spacing inside the box */
+  ///background: #fff; /* White background */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for card look */
+
+  /* Heading style */
+  h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    color: #333;
+  }
+
+  /* Form group wrapper for label + input */
+  .form-group {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column; /* Stack label on top of input */
+  }
+
+  /* Input field style */
+  input {
+    padding: 0.5rem;
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 4px; /* Rounded input */
+    font-size: 1rem;
+  }
+
+  /* Login button */
+  button {
+    width: 100%; /* Full width */
+    padding: 0.75rem;
+    //background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%); /* Primary blue color */
+    background:  radial-gradient(circle,rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+    color: #fff; /* White text */
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+
+    /* Add hover effect */
+    &:hover:not(:disabled) {
+     background: linear-gradient(90deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    }
+
+    /* Disabled button style */
+    &:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+  }
+
+
+  .social-login-buttons{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    button{
+      flex: 1;
+      margin: 0 0.5rem;
+      padding: 0.5rem;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      background:  radial-gradient(circle,rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+      &:hover{
+      background: linear-gradient(90deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+      } 
+    }
+}
+    /* Error message style */
+    .error-message {
+        font-size: 0.875rem;
+        margin-top: 0.5rem;
+        text-align: center;
+    }
+    
+    /* Alternative login text */
+    .alternative-login {
+        text-align: center;
+        margin: 1.5rem 0;
+        color: #666;
+        font-size: 0.9rem;
+    }
+
+    .forgot-password {
+        background: none;
+        border: none;
+        //color: #007bff;
+        cursor: pointer;
+        font-size: 0.9rem;
+        text-decoration: underline;
+        padding: 0;
+        margin-top: 0.5rem;
+
+        &:hover {
+        //    color: #0056b3;
+        }
+    }
+    .sign-up{
+        background: none;
+        border: none;
+        color: #28a745;
+        cursor: pointer;
+        font-size: 0.9rem;
+        text-decoration: underline;
+        padding: 0;
+        margin-top: 0.5rem;
+
+        &:hover {
+            color: #1e7e34;
+        }
+    }
+}
+
