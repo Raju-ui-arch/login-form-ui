@@ -1,0 +1,34 @@
+#CI-Only workflow for Angular Application
+
+name : Angular CI #Name of the workflow
+
+on:
+  push:
+    branches: [ main ] #Run when code is  pushed to main branch
+  pull_request:
+    branches: [ main ] #Run when a PR is created for the main branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest #github gives a linux vm to run the job
+
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v3 #pulls repo code to the vm
+
+      - name: setup nodejs
+        uses: actions/setup-node@v3 #sets up nodejs in the vm
+        with:
+          node-version: '16' #nodejs version to be setup
+          cache: 'npm' #caches npm dependencies
+
+      - name: install dependencies
+        run: npm ci #installs npm dependencies (clean install faster and reliable for CI)
+
+      - name: Run tests
+        run: npm test -- --watch=false --no-progress --browsers=ChromeHeadlessCI
+        #runs unit tests in headless chrome browser
+
+      - name: build
+        run: npm run build -- --prod #builds the angular app in production mode
+
